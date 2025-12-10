@@ -20,18 +20,20 @@ int main()
 
     int eS = 0;
     int max = 0;
-    int us = 0;
+    int uS = 0;
     bool found = false;
 
-    for (int i = 0; i < 12; i++) {
+    for (int i = 0; i < 12; i++) 
+    {
         int eC = 0;
 
-        for (int j = 0; j < 6; j++) {
+        for (int j = 0; j < 6; j++) 
+        {
             if (seats[i][j] == 0)
                 eC++;
 
             if (seats[i][j] == 0 || seats[i][j] == 1)
-                us++;
+                uS++;
 
             if (j <= 3 &&
                 seats[i][j] == 0 &&
@@ -41,7 +43,8 @@ int main()
             }
         }
 
-        if (eC > eS) {
+        if (eC > eS) 
+        {
             eS = eC;
             max = i + 1;
         }
@@ -49,7 +52,7 @@ int main()
 
     cout << "Row with highest empty seats: " << max << endl;
     cout << "Three consecutive empty seats: " << (found ? "YES" : "NO") << endl;
-    cout << "Total usable seats: " << us << endl;
+    cout << "Total usable seats: " << uS << endl;
 
     return 0;
 }
